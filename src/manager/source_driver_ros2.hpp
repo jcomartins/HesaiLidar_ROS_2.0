@@ -120,7 +120,12 @@ inline void SourceDriver::Init(const YAML::Node& config)
 
   node_ptr_.reset(new rclcpp::Node("hesai_ros_driver_node"));
   if (driver_param.input_param.send_point_cloud_ros) {
-    pub_ = node_ptr_->create_publisher<sensor_msgs::msg::PointCloud2>(driver_param.input_param.ros_send_point_topic, 100);
+    // Create a QoS profile with Best Effort reliability
+    rclcpp::QoS qos_profile(3);  // Specify the history depth (e.g., 100)
+    qos_profile.reliability(rclcpp::ReliabilityPolicy::BestEffort);
+    // Create the publisher with the specified QoS
+    pub_ = node_ptr_->create_publisher<sensor_msgs::msg::PointCloud2>(
+        driver_param.input_param.ros_send_point_topic, qos_profile);
   }
 
 
