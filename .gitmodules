@@ -1,3 +1,3 @@
 [submodule "src/driver/HesaiLidar_SDK_2.0"]
 	path = src/driver/HesaiLidar_SDK_2.0
-	url = https://github.com/jcomartins/HesaiLidar_SDK_2.0/tree/machine
+	url = https://github.com/jcomartins/HesaiLidar_SDK_2.0
