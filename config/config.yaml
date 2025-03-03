@@ -26,7 +26,7 @@ lidar:
       fov_end:  -1
       enable_packet_loss_tool: false    # enable the udp packet loss detection tool
       distance_correction_lidar_type: ""   # Configure the corresponding lidar model when optical centre correction needs to be turned on
-      lidar_type: ""                       # When you need to enable XT point cloud S hierarchical correction, configure the corresponding model
+      lidar_type: "PandarXT32"                       # When you need to enable XT point cloud S hierarchical correction, configure the corresponding model
       device_udp_src_port: 0               # Filter point clouds for specified source ports in case of multiple lidar, setting >=1024
       device_fault_port: 0                 # Filter fault message for specified source ports in case of multiple lidar, setting >=1024
     ros:
